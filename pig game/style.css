@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto+Slab:wght@300;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-style: Roboto Slab, serif;
+  background-image: linear-gradient(to right, #ca228e, #753682);
+  color: #333;
+  font-weight: 400;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.2rem;
+  position: relative;
+}
+
+h1 {
+  position: absolute;
+  left: 50%;
+  top: 7%;
+  transform: translateX(-50%);
+  font-size: 6rem;
+  color: #333;
+  font-weight: 700;
+  text-shadow: -1px 1px 0 #fff, 1px 1px 0 #fff, 1px -1px 0 #fff,
+    -1px -1px 0 #fff;
+}
+
+main {
+  position: relative;
+  width: 100em;
+  height: 60rem;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 1rem;
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.player {
+  display: flex;
+  flex: 50%;
+  padding: 9rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-active {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.player-active .name {
+  font-weight: 700;
+}
+
+.player-active .score {
+  font-weight: 400;
+}
+
+.player-active .current {
+  opacity: 1;
+}
+
+h2 {
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+.score {
+  margin-top: 2rem;
+  font-size: 9rem;
+  color: #ca228e;
+  margin-bottom: auto;
+}
+
+.current {
+  font-size: 1.8rem;
+  background-color: #ca228e;
+  padding: 2rem;
+  border-radius: 1rem;
+  color: #ddd;
+  text-align: center;
+  transition: all 0.2s;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+}
+
+.current-score {
+  margin-top: 1.6rem;
+  font-size: 3.6rem;
+  font-weight: 600;
+}
+.btn,
+img {
+  position: absolute;
+}
+
+img {
+  height: 10rem;
+  top: 15rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.btn {
+  position: absolute;
+  left: 50%;
+  border: none;
+  font-family: inherit;
+  padding: 1rem 2rem;
+  border-radius: 2.4rem;
+  font-size: 1.8rem;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transform: translateX(-50%);
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: translate(-50%, 3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn::first-letter {
+  font-size: 2.4rem;
+  display: inline-block;
+  margin-right: 0.7rem;
+}
+
+.restart {
+  top: 4rem;
+}
+
+.roll-dice {
+  top: 37rem;
+}
+
+.hold {
+  top: 46rem;
+}
+
+.player-winner {
+  background-color: #333;
+}
+
+.player-winner .score {
+  color: #67ef67;
+}
+
+.player-winner .name {
+  font-weight: 700;
+  color: #67ef67;
+  border-radius: 3rem;
+  padding: 0.5rem;
+}
+
+.player-winner .current {
+  background-color: #67ef67;
+  color: #333;
+}
+
+.ins {
+  bottom: 6rem;
+  text-transform: uppercase;
+}
+
+.closeIns {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  font-size: 2.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  color: #555;
+  background-color: white;
+  padding: 5rem;
+  gap: 2.4rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.instructions li {
+  margin-top: 1rem;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 5;
+}
+
+.hidden {
+  display: none;
+}
+
+.result {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3.5rem;
+  background-color: rgba(27, 231, 27, 0.624);
+  padding: 1.2rem;
+  border-radius: 1rem;
+}

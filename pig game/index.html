@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pig game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>PIG GAME!</h1>
+    <main>
+      <section class="player player-0 player-active">
+        <h2 class="name">PLAYER 1</h2>
+        <p class="score" id="score-0">43</p>
+        <div class="current">
+          <p class="current-text">CURRENT</p>
+          <p class="current-score" id="current-score-0">0</p>
+        </div>
+      </section>
+      <section class="player player-1">
+        <h2 class="name">PLAYER 2</h2>
+        <p class="score" id="score-1">24</p>
+        <div class="current">
+          <p class="current-text">CURRENT</p>
+          <p class="current-score" id="current-score-1">0</p>
+        </div>
+      </section>
+      <button class="btn restart">↻ NEW GAME</button>
+      <button class="btn roll-dice">🎲 ROLL THE DICE</button>
+      <button class="btn hold">📥 HOLD</button>
+      <img src="img/dice-5.png" alt="Playing dice" class="dice" />
+    </main>
+    <div class="overlay hidden"></div>
+    <div class="instructions hidden">
+      <button class="closeIns">&times;</button>
+      <h4>Instructions:</h4>
+      <ul>
+        <li>
+          Player can select to roll the dice untill the player decides to hold.
+          After clicking on hold the current score will be added to the total
+          score.
+        </li>
+        <li>
+          If the player gets 1 before selecting to hold then the scored points
+          will be lost and nothing will be added to the total score and the turn
+          will be passed to the opponent.
+        </li>
+        <li>the player who reaches the 100 first will win the game!</li>
+        <li>To reset the game click on new game.</li>
+      </ul>
+    </div>
+    <button class="btn ins">📜 how to play</button>
+    <p class="result hidden">PLAYER 1 WINS!!!</p>
+    <script src="script.js"></script>
+  </body>
+</html>
